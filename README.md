@@ -73,7 +73,7 @@ sudo -u postgres createdb lead_score_engine
 ### Step 2: Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/MaverickP24/Targetgrid_Lead_Score
 cd Lead-Score-Engine
 ```
 
