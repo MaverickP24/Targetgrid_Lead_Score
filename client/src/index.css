@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Modern Professional Palette - Deep Navy & Vibrant Blue/Green */
+  --background: 220 30% 98%;
+  --foreground: 224 30% 15%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 224 30% 15%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 224 30% 15%;
+
+  --primary: 226 80% 55%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 220 20% 92%;
+  --secondary-foreground: 222 47% 11%;
+
+  --muted: 220 20% 94%;
+  --muted-foreground: 215 16% 47%;
+
+  --accent: 160 84% 39%; /* Emerald for positive scores */
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 226 80% 55%;
+
+  --radius: 0.75rem;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+.dark {
+  --background: 224 30% 8%;
+  --foreground: 210 40% 98%;
+
+  --card: 224 25% 12%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 224 25% 12%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 226 80% 65%;
+  --primary-foreground: 222 47% 11%;
+
+  --secondary: 217 19% 27%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 217 19% 27%;
+  --muted-foreground: 215 20% 65%;
+
+  --accent: 160 84% 45%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217 19% 27%;
+  --input: 217 19% 27%;
+  --ring: 224 76% 48%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight font-bold;
+  }
+}
+
+/* Custom Utilities */
+.glass-panel {
+  @apply bg-card/80 backdrop-blur-md border border-border/50 shadow-sm;
+}
+
+.animate-enter {
+  animation: enter 0.4s ease-out forwards;
+}
+
+@keyframes enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dashboard Grid Layouts */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
