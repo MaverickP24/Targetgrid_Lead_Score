@@ -56,6 +56,8 @@ export class DatabaseStorage implements IStorage {
   }
 
   async deleteLead(id: number): Promise<void> {
+    await db.delete(events).where(eq(events.leadId, id));
+    await db.delete(scoreHistory).where(eq(scoreHistory.leadId, id));
     await db.delete(leads).where(eq(leads.id, id));
   }
 
